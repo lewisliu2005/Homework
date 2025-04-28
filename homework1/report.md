@@ -311,6 +311,8 @@ void compositeSort(vector<int> &arr) {
 | 4000   | 6524 | 6496 | 6492 | 6508 | 6508 |
 | 5000   | 6584 | 6728 | 6576 | 6732 | 6564 |
 
+![image](https://github.com/lewisliu2005/Homework/blob/main/homework1/src/pic/sorting_avg_memory_plot.png)
+
 #### 4.1.3 Worst-case 執行時間（微秒）
 | n      | 插入       | 快速       | 合併       | 堆         | 複合       |
 |--------|------------|------------|------------|------------|------------|
@@ -325,6 +327,8 @@ void compositeSort(vector<int> &arr) {
 | 4000   | 319127.71  | 12438.63   | 27382.88   | 187539.53  | 223107.06  |
 | 5000   | 513285.95  | 17384.29   | 40818.74   | 270111.03  | 337766.89  |
 
+![image](https://github.com/lewisliu2005/Homework/blob/main/homework1/src/pic/sorting_worst_time_plot.png)
+
 #### 4.1.4 Worst-case 記憶體使用量（KB）
 | n      | 插入 | 快速 | 合併 | 堆   | 複合 |
 |--------|------|------|------|------|------|
@@ -338,6 +342,8 @@ void compositeSort(vector<int> &arr) {
 | 3000   | 6976 | 6976 | 6976 | 6996 | 6996 |
 | 4000   | 6996 | 6996 | 6996 | 6996 | 6996 |
 | 5000   | 7048 | 7048 | 6988 | 6988 | 7028 |
+
+![image](https://github.com/lewisliu2005/Homework/blob/main/homework1/src/pic/sorting_worst_memory_plot.png)
 
 ### 4.2 時間複雜度推算
 時間複雜度通過運行時間隨輸入大小 n 的增長比率推算：
