@@ -68,7 +68,10 @@
 #include <vector>
 #include <windows.h>
 #include <psapi.h>
+using namespace std;
 ```
+- **功能**：逐元素插入，通過右移操作騰出位置，適合小數據或近乎排序數據。
+- **特點**：簡單高效，無需額外空間。
 
 ### 2.1 插入排序實現
 ```cpp
