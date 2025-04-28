@@ -11,14 +11,14 @@
 
 using namespace std;
 
-// ´ú¶q°O¾ĞÅé¨Ï¥Î¶q¡]³æ¦ì¡GKB¡^
+// æ¸¬é‡è¨˜æ†¶é«”ä½¿ç”¨é‡ï¼ˆå–®ä½ï¼šKBï¼‰
 size_t getMemoryUsage() {
     PROCESS_MEMORY_COUNTERS memInfo;
     GetProcessMemoryInfo(GetCurrentProcess(), &memInfo, sizeof(memInfo));
     return memInfo.WorkingSetSize / 1024;
 }
 
-// ²£¥ÍÀH¾÷±Æ¦C
+// ç”¢ç”Ÿéš¨æ©Ÿæ’åˆ—
 void permute(vector<int>& arr) {
     int n = arr.size();
     static mt19937 gen(static_cast<unsigned int>(time(nullptr)));
@@ -28,7 +28,7 @@ void permute(vector<int>& arr) {
     }
 }
 
-// ´¡¤J±Æ§Ç
+// æ’å…¥æ’åº
 void insertionSort(vector<int>& arr) {
     int n = arr.size();
     for (int i = 1; i < n; ++i) {
@@ -42,7 +42,7 @@ void insertionSort(vector<int>& arr) {
     }
 }
 
-// §Ö³t±Æ§Ç
+// å¿«é€Ÿæ’åº
 int medianOfThree(vector<int>& arr, int low, int high, bool reverse = false) {
     int mid = low + (high - low) / 2;
     if (reverse) {
@@ -87,7 +87,7 @@ void quickSort(vector<int>& arr) {
     quickSortHelper(arr, 0, arr.size() - 1, false);
 }
 
-// ­¡¥N¦X¨Ö±Æ§Ç
+// è¿­ä»£åˆä½µæ’åº
 void merge(vector<int>& arr, vector<int>& temp, int left, int mid, int right) {
     int i = left, j = mid + 1, k = left;
     while (i <= mid && j <= right) {
@@ -111,7 +111,7 @@ void mergeSort(vector<int>& arr) {
     }
 }
 
-// °ï±Æ§Ç
+// å †ç©æ’åº
 void heapify(vector<int>& arr, int n, int i) {
     int largest = i;
     int left = 2 * i + 1;
@@ -133,7 +133,7 @@ void heapSort(vector<int>& arr) {
     }
 }
 
-// ÀË¬d¼Æ¾Ú±Æ§Ç«×
+// æª¢æŸ¥æ•¸æ“šæ’åºåº¦
 double sortedness(const vector<int>& arr) {
     int n = arr.size();
     int inversions = 0;
@@ -145,7 +145,7 @@ double sortedness(const vector<int>& arr) {
     return static_cast<double>(inversions) / (n * (n - 1) / 2);
 }
 
-// ·s½Æ¦X±Æ§Ç
+// æ–°è¤‡åˆæ’åº
 void compositeSort(vector<int>& arr) {
     int n = arr.size();
     if (n <= 50) {
@@ -164,7 +164,7 @@ void compositeSort(vector<int>& arr) {
     }
 }
 
-// ¥Í¦¨ worst-case ¼Æ¾Ú
+// ç”Ÿæˆ worst-case æ•¸æ“š
 vector<int> generateWorstCaseInsertion(int n) {
     vector<int> arr(n);
     for (int i = 0; i < n; ++i) arr[i] = n - i;
@@ -219,7 +219,7 @@ vector<int> generateWorstCaseHeap(int n) {
     return worst;
 }
 
-// ´ú¶q±Æ§Ç©Ê¯à
+// æ¸¬é‡æ’åºæ€§èƒ½
 pair<double, size_t> measureSort(void (*sortFunc)(vector<int>&), vector<int> arr,
     int repeat = 1000, bool reverse = false) {
     double totalTime = 0;
@@ -242,19 +242,19 @@ pair<double, size_t> measureSort(void (*sortFunc)(vector<int>&), vector<int> arr
 
 int main() {
     vector<int> sizes = { 500, 1000, 2000, 3000, 4000, 5000 };
-    vector<string> sortNames = { "´¡¤J", "§Ö³t", "¦X¨Ö", "°ï", "½Æ¦X" };
+    vector<string> sortNames = { "æ’å…¥", "å¿«é€Ÿ", "åˆä½µ", "å †", "è¤‡åˆ" };
     vector<void (*)(vector<int>&)> sortFuncs = { insertionSort, quickSort, mergeSort,
                                                 heapSort, compositeSort };
 
     ofstream outFile("sorting_results.txt");
     outFile << fixed << setprecision(2);
 
-    outFile << "±Æ§Çºtºâªk©Ê¯à¤ÀªR\n\n";
+    outFile << "æ’åºæ¼”ç®—æ³•æ€§èƒ½åˆ†æ\n\n";
 
-    // Average-case ´ú¸Õ
-    outFile << "Average-case °õ¦æ®É¶¡¡]·L¬í¡^:\n";
-    outFile << setw(10) << "n" << setw(15) << "´¡¤J" << setw(15) << "§Ö³t" << setw(15)
-        << "¦X¨Ö" << setw(15) << "°ï" << setw(15) << "½Æ¦X" << "\n";
+    // Average-case æ¸¬è©¦
+    outFile << "Average-case åŸ·è¡Œæ™‚é–“ï¼ˆå¾®ç§’ï¼‰:\n";
+    outFile << setw(10) << "n" << setw(15) << "æ’å…¥" << setw(15) << "å¿«é€Ÿ" << setw(15)
+        << "åˆä½µ" << setw(15) << "å †" << setw(15) << "è¤‡åˆ" << "\n";
     vector<vector<double>> avgTimes(sizes.size(), vector<double>(sortFuncs.size()));
     vector<vector<size_t>> avgMemories(sizes.size(), vector<size_t>(sortFuncs.size()));
 
@@ -282,9 +282,9 @@ int main() {
         outFile << "\n";
     }
 
-    outFile << "\nAverage-case °O¾ĞÅé¨Ï¥Î¶q¡]KB¡^:\n";
-    outFile << setw(10) << "n" << setw(15) << "´¡¤J" << setw(15) << "§Ö³t" << setw(15)
-        << "¦X¨Ö" << setw(15) << "°ï" << setw(15) << "½Æ¦X" << "\n";
+    outFile << "\nAverage-case è¨˜æ†¶é«”ä½¿ç”¨é‡ï¼ˆKBï¼‰:\n";
+    outFile << setw(10) << "n" << setw(15) << "æ’å…¥" << setw(15) << "å¿«é€Ÿ" << setw(15)
+        << "åˆä½µ" << setw(15) << "å †" << setw(15) << "è¤‡åˆ" << "\n";
     for (size_t i = 0; i < sizes.size(); ++i) {
         outFile << setw(10) << sizes[i];
         for (size_t j = 0; j < sortFuncs.size(); ++j) {
@@ -293,10 +293,10 @@ int main() {
         outFile << "\n";
     }
 
-    // Worst-case ´ú¸Õ
-    outFile << "\nWorst-case °õ¦æ®É¶¡¡]·L¬í¡^:\n";
-    outFile << setw(10) << "n" << setw(15) << "´¡¤J" << setw(15) << "§Ö³t" << setw(15)
-        << "¦X¨Ö" << setw(15) << "°ï" << setw(15) << "½Æ¦X" << "\n";
+    // Worst-case æ¸¬è©¦
+    outFile << "\nWorst-case åŸ·è¡Œæ™‚é–“ï¼ˆå¾®ç§’ï¼‰:\n";
+    outFile << setw(10) << "n" << setw(15) << "æ’å…¥" << setw(15) << "å¿«é€Ÿ" << setw(15)
+        << "åˆä½µ" << setw(15) << "å †" << setw(15) << "è¤‡åˆ" << "\n";
     vector<vector<double>> worstTimes(sizes.size(), vector<double>(sortFuncs.size()));
     vector<vector<size_t>> worstMemories(sizes.size(), vector<size_t>(sortFuncs.size()));
 
@@ -316,9 +316,9 @@ int main() {
         outFile << "\n";
     }
 
-    outFile << "\nWorst-case °O¾ĞÅé¨Ï¥Î¶q¡]KB¡^:\n";
-    outFile << setw(10) << "n" << setw(15) << "´¡¤J" << setw(15) << "§Ö³t" << setw(15)
-        << "¦X¨Ö" << setw(15) << "°ï" << setw(15) << "½Æ¦X" << "\n";
+    outFile << "\nWorst-case è¨˜æ†¶é«”ä½¿ç”¨é‡ï¼ˆKBï¼‰:\n";
+    outFile << setw(10) << "n" << setw(15) << "æ’å…¥" << setw(15) << "å¿«é€Ÿ" << setw(15)
+        << "åˆä½µ" << setw(15) << "å †" << setw(15) << "è¤‡åˆ" << "\n";
     for (size_t i = 0; i < sizes.size(); ++i) {
         outFile << setw(10) << sizes[i];
         for (size_t j = 0; j < sortFuncs.size(); ++j) {
@@ -327,9 +327,9 @@ int main() {
         outFile << "\n";
     }
 
-    // ³Ì§Öºtºâªk
-    outFile << "\nAverage-case ³Ì§Öºtºâªk:\n";
-    outFile << setw(10) << "n" << setw(20) << "³Ì§Öºtºâªk" << setw(15) << "®É¶¡¡]·L¬í¡^"
+    // æœ€å¿«æ¼”ç®—æ³•
+    outFile << "\nAverage-case æœ€å¿«æ¼”ç®—æ³•:\n";
+    outFile << setw(10) << "n" << setw(20) << "æœ€å¿«æ¼”ç®—æ³•" << setw(15) << "æ™‚é–“ï¼ˆå¾®ç§’ï¼‰"
         << "\n";
     for (size_t i = 0; i < sizes.size(); ++i) {
         double minTime = avgTimes[i][0];
@@ -344,8 +344,8 @@ int main() {
             << minTime << "\n";
     }
 
-    outFile << "\nWorst-case ³Ì§Öºtºâªk:\n";
-    outFile << setw(10) << "n" << setw(20) << "³Ì§Öºtºâªk" << setw(15) << "®É¶¡¡]·L¬í¡^"
+    outFile << "\nWorst-case æœ€å¿«æ¼”ç®—æ³•:\n";
+    outFile << setw(10) << "n" << setw(20) << "æœ€å¿«æ¼”ç®—æ³•" << setw(15) << "æ™‚é–“ï¼ˆå¾®ç§’ï¼‰"
         << "\n";
     for (size_t i = 0; i < sizes.size(); ++i) {
         double minTime = worstTimes[i][0];
@@ -361,7 +361,7 @@ int main() {
     }
 
     outFile.close();
-    cout << "µ²ªG¤w¼g¤J sorting_results.txt\n";
+    cout << "çµæœå·²å¯«å…¥ sorting_results.txt\n";
 
     return 0;
 }
