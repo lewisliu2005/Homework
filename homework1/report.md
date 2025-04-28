@@ -175,7 +175,7 @@ void mergeSort(vector<int> &arr) {
   - merge()中的 while (i <= mid)與while (j <= right)，用來處理剩下的資料
   - 最後將結果存回arr
 
-### 2.4 堆排序實現
+### 2.4 堆積排序實現
 ```cpp
 void heapify(vector<int> &arr, int n, int i) {
     int largest = i;
