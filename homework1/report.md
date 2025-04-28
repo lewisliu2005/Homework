@@ -56,6 +56,20 @@
 
 以下為程式碼中各排序函數及相關功能的核心實現和功能講解。
 
+### 2.0 標頭使用
+```cpp
+#include <algorithm>
+#include <chrono>
+#include <ctime>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <random>
+#include <vector>
+#include <windows.h>
+#include <psapi.h>
+```
+
 ### 2.1 插入排序實現
 ```cpp
 void insertionSort(vector<int> &arr) {
