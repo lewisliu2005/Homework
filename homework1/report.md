@@ -176,7 +176,11 @@ void mergeSort(vector<int> &arr) {
 - **說明**：
   - arr為須排序之陣列，然後題目要求之n值，會利用size()取得
   - temp負責儲存合併之結果，大小與arr一致
-  - whlie迴圈會從j-1的位置向左比對
+  - i=left為第一段開頭，j=mid為第二段開頭
+  - k為temp陣列中應寫入的位置，初始為left
+  - merge()中的while (i <= mid && j <= right)，用來比較 arr[i] 和 arr[j] 的大小
+  - merge()中的 while (i <= mid)與while (j <= right)，用來處理剩下的資料
+  - 最後將結果存回arr
 
 ### 2.4 堆排序實現
 ```cpp
