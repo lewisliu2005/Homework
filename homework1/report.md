@@ -139,6 +139,10 @@ void quickSortHelper(vector<int> &arr, int low, int high, bool reverse) {
 ```
 - **功能**：使用中位數基準選擇和插入排序優化，減少遞迴深度和最壞情況影響。
 - **特點**：支持逆序排序（`reverse`），高效處理大數據。
+- **說明**：
+  - arr 會針對 [low,high] 的區段進行排序
+  - reverse 用來升序或降序
+  - 使用 三數取中（median-of-three）
 
 ### 2.3 合併排序實現
 ```cpp
