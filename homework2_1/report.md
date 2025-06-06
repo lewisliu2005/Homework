@@ -271,45 +271,45 @@ if (lastE >= this->heap[child]) break;
 
 ## 測試與驗證
 ### MaxHeap
-![chart1](https://github.com/lewisliu2005/test2/blob/main/src/image/Maxheap1.png)
+![chart1](https://github.com/lewisliu2005/Homework/blob/main/homework2_1/src/image/Max1.png)
 
 首先先決定要輸入多少數字(變數num)，並設定堆的初始陣列大小。
 
 接著cmd便會顯示樹(樹的根在最左邊，左樹根->右樹底)
 
-![chart1](https://github.com/lewisliu2005/test2/blob/main/src/image/Max2.png)
+![chart1](https://github.com/lewisliu2005/Homework/blob/main/homework2_1/src/image/Max2.png)
 
 第一次Pop，Pop完後會再輸出一次現在樹的樣子
 
-![chart1](https://github.com/lewisliu2005/test2/blob/main/src/image/Max3.png)
+![chart1](https://github.com/lewisliu2005/Homework/blob/main/homework2_1/src/image/Max3.png)
 
 第二、三次Pop
 
-![chart1](https://github.com/lewisliu2005/test2/blob/main/src/image/Max4.png)
+![chart1](https://github.com/lewisliu2005/Homework/blob/main/homework2_1/src/image/Max4.png)
 
 第四、五、六次Pop
 
-![chart1](https://github.com/lewisliu2005/test2/blob/main/src/image/Max5.png)
+![chart1](https://github.com/lewisliu2005/Homework/blob/main/homework2_1/src/image/Max5.png)
 
 第七、八、九次Pop
 
 ### MinHeap
 
-![chart1](https://github.com/lewisliu2005/test2/blob/main/src/image/Min1.png)
+![chart1](https://github.com/lewisliu2005/Homework/blob/main/homework2_1/src/image/Min1.png)
 
 一樣先決定要輸入多少數字(變數num)，並設定堆的初始陣列大小。
 
 接著cmd便會顯示樹(樹的根在最左邊，左樹根->右樹底)
 
-![chart1](https://github.com/lewisliu2005/test2/blob/main/src/image/Min2.png)
+![chart1](https://github.com/lewisliu2005/Homework/blob/main/homework2_1/src/image/Min2.png)
 
 第一、二次Pop，Pop完後會再輸出一次現在樹的樣子
 
-![chart1](https://github.com/lewisliu2005/test2/blob/main/src/image/Min3.png)
+![chart1](https://github.com/lewisliu2005/Homework/blob/main/homework2_1/src/image/Min3.png)
 
 第三、四、五次Pop
 
-![chart1](https://github.com/lewisliu2005/test2/blob/main/src/image/Min4.png)
+![chart1](https://github.com/lewisliu2005/Homework/blob/main/homework2_1/src/image/Min4.png)
 
 第六、七、八、九次Pop
 
